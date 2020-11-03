@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>One Stop Shopper</title> 
+   		<link href="css/stylesheet.css" rel="stylesheet"> 
+   		<link rel="stylesheet" href="https://use.typekit.net/wfh0ymy.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<script src="js/javascript.js"></script>  
+    	<!--<script src="js/walgreens-storeinven.js"></script>-->
+    	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar" id="responsiveNav">
+	        <a href="javascript:void(0);" class="icon" onclick="navbar();">&#9776;</a>
+	        <a href="index.html" class="siteName">One Stop Shopper</a>
+	        <a href="about.html" class="option">About</a>
+	        <a href="contact.html" class="option">Contact</a>
+	        <a href="list.html" class="option">List</a>>
+	        <a href="category.html" class="active navHome">Categories</a>
+      	</nav>
+
+      	
+ 		
+	    <div class="main">
+
+	    	<p>categories search text:
+			<script type="text/javascript">
+		        document.write(getCategory1());
+		    </script>
+		    ,
+		    <script type="text/javascript">
+		        document.write(getCategory2());
+		    </script>
+	    	</p>
+	    	<div class="grid-container">
+				<div class="grid-item">
+					<a href="productdetail.html" onclick="saveProduct('Hand Sanitizer');"><img src="images/handsanitizer.jpg"><br>test</a>
+				</div>
+				<div class="grid-item">
+					<a href="productdetail.html" onclick="saveProduct('Disinfectant');"><img src="images/disinfectant.jpg"><br>test</a>
+				</div>
+				<div class="grid-item">
+					<a href="productdetail.html" onclick="ssaveProduct('Masks');"><img src="images/mask.jpg"><br>test</a>
+				</div>
+			</div>
+		</div>
+
+	  	</div>
+		
+
+
+
+
+		<br><br>
+	</body>
+	<script>
+		var apiKey = 'bL8gvedlapsuxSKgEMYaTh73oeHLsJvG';
+
+		const Url = 'https://services-qa.walgreens.com/api/products/inventory/v2';
+
+		// axios.<method> will now provide autocomplete and parameter typings
+		axios.post(Url, {
+			apiKey: apiKey,
+			affId: 'Flintstone',
+			store: '1120',
+			planograms: '07385209652'
+		});
+	</script>
+</html>
